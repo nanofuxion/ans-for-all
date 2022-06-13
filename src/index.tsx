@@ -30,12 +30,26 @@ interface IANSContext {
 
 export const ANSContext = React.createContext<Partial<IANSContext>>({} as IANSContext);
 
+
+export function useAns(): Partial<IANSContext> {
+    const UseANSContext: Partial<IANSContext> = React.useContext(ANSContext);
+
+    if (UseANSContext === null) {
+        throw new Error(
+            'useAns() can only be used inside of <AnsProvider />, ' +
+            'please declare it at a higher level.'
+        )
+    }
+
+    return UseANSContext;
+}
+
 export const Badge = Default_Badge;
 
 //will replace later
 const connector = lang.connector;
 
-export const ANS = (props: Props) => {
+export const AnsProvider = (props: Props) => {
 
     const [walletConnected, setWalletConnected] = React.useState(false)
     const [address, setAddress] = React.useState(undefined)

@@ -399,15 +399,17 @@ var connector = {
 };
 
 var Default_Badge = function Default_Badge() {
-  var NameService = React.useContext(ANSContext); //will replace later
-
+  //will replace later
   var connector$1 = connector;
-  var walletConnected = NameService.walletConnected,
-      address = NameService.address,
-      ansData = NameService.ansData,
-      shortenAddress = NameService.shortenAddress,
-      arconnectConnect = NameService.arconnectConnect,
-      arconnectDisconnect = NameService.arconnectDisconnect;
+
+  var _useAns = useAns(),
+      walletConnected = _useAns.walletConnected,
+      address = _useAns.address,
+      ansData = _useAns.ansData,
+      shortenAddress = _useAns.shortenAddress,
+      arconnectConnect = _useAns.arconnectConnect,
+      arconnectDisconnect = _useAns.arconnectDisconnect;
+
   return /*#__PURE__*/React.createElement(React.Fragment, null, walletConnected && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
     className: "btn btn-outline btn-secondary btn-sm md:btn-md text-sm md:text-base normal-case",
     onClick: arconnectDisconnect
@@ -417,7 +419,10 @@ var Default_Badge = function Default_Badge() {
       backgroundColor: ansData == null ? void 0 : ansData.address_color
     }
   }) : /*#__PURE__*/React.createElement("div", {
-    className: "mx-auto rounded-full h-6 w-6 overflow-hidden ml-2 btn-secondary border-[1px]"
+    className: "mx-auto rounded-full h-6 w-6 overflow-hidden ml-2 btn-secondary border-[1px]",
+    style: {
+      backgroundColor: ansData == null ? void 0 : ansData.address_color
+    }
   }, /*#__PURE__*/React.createElement("img", {
     src: "https://arweave.net/" + (ansData == null ? void 0 : ansData.avatar),
     alt: "Profile",
@@ -434,10 +439,19 @@ var Default_Badge = function Default_Badge() {
 
 var requiredPermissions = ['ACCESS_ADDRESS', 'ACCESS_ALL_ADDRESSES', 'SIGNATURE', 'SIGN_TRANSACTION'];
 var ANSContext = /*#__PURE__*/React.createContext({});
+function useAns() {
+  var UseANSContext = React.useContext(ANSContext);
+
+  if (UseANSContext === null) {
+    throw new Error('useAns() can only be used inside of <AnsProvider />, ' + 'please declare it at a higher level.');
+  }
+
+  return UseANSContext;
+}
 var Badge = Default_Badge; //will replace later
 
 var connector$1 = connector;
-var ANS = function ANS(props) {
+var AnsProvider = function AnsProvider(props) {
   var _React$useState = React.useState(false),
       walletConnected = _React$useState[0],
       setWalletConnected = _React$useState[1];
@@ -692,7 +706,8 @@ var ANS = function ANS(props) {
   }, props.children);
 };
 
-exports.ANS = ANS;
 exports.ANSContext = ANSContext;
+exports.AnsProvider = AnsProvider;
 exports.Badge = Badge;
+exports.useAns = useAns;
 //# sourceMappingURL=ans-for-all.cjs.development.js.map

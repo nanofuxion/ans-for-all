@@ -1,28 +1,33 @@
 import React from 'react';
-import { ANS, Badge, ANSContext } from 'ans-for-all';
+import { AnsProvider, Badge, useAns } from 'ans-for-all';
+import { Custom_Badge } from '../components/custom'
 
 export default function Home() {
 
   return (
-    <ANS>
+    <AnsProvider>
       <div className="mb-2">
         <Name />
       </div>
-      <Badge />
-    </ANS>
+
+      <div className="flex flex-row mx-2">
+      <div className="my-auto">
+        <Badge />
+      </div>
+        <Custom_Badge />
+      </div>
+    </AnsProvider>
   )
 }
 
 export function Name() {
-
-  const NameService = React.useContext(ANSContext);
 
   const {
     address,
     walletConnected,
     ansData,
 
-  } = NameService;
+  } = useAns();
 
   return (
     walletConnected ?
