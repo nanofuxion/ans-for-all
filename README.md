@@ -83,17 +83,27 @@ This is the provider component. It should be placed above all components using `
 
 ### useAns
 
-This is the hook to be used throughout the app. It returns an object containing { walletConnected, address, ansData, shortenAddress, arconnectConnect, arconnectDisconnect }, containing:
+This is the hook to be used throughout the app. It returns an object containing: 
+  - [walletConnected](#walletconnected) 
+  - [address](#address) 
+  - [ansData](#ansdata) 
+  - [shortenAddress](#shortenaddress) 
+  - [arconnectConnect](#arconnectconnect) 
+  - [arconnectDisconnect](#arconnectdisconnect) 
 
 
 ## walletConnected 
 - State of the Arconnect/Finnie wallet.
+- 
 ## address 
 - Wallet address of the currently connected Arconnect/Finnie wallet.
-## ansData returns: 
-      - address_color: The ANS profile color.
-      - currentLabel:  The current ANS label in use.
-      - avatar: The TXID for the ANS Avatar Image.
+
+## ansData 
+
+ Returns:
+  - address_color: The ANS profile color.
+  - currentLabel:  The current ANS label in use.
+  - avatar: The TXID for the ANS Avatar Image.
 
 ## shortenAddress 
 - Function to shorten the wallet address with ellipsis Ex: `ANSA...ANSA`
@@ -104,7 +114,7 @@ This is the hook to be used throughout the app. It returns an object containing 
 ## arconnectDisconnect 
 - Function used to request disconnecting site from ArConnect.
 
-### Custom badge
+# Custom Badge Example:
 
 ```jsx
 // components/custom.jsx
@@ -157,7 +167,7 @@ export const Default_Badge = () => {
 }
 ```
 
-### Examples
+# Examples
 
 To run the examples, switch to the respective directories. Run `npm install` or `yarn install`, Then run `npm start dev` or `yarn dev`.
 
