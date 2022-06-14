@@ -1,9 +1,6 @@
 # ans-for-all
 A drop in module to utilize the ANS(Arweave Name Service) in react apps
 
-## Todos:
-* Implement persistent sessions with [`"sessionUtils/sessionStorage.ts"`](https://github.com/nanofuxion/arjs-react/blob/main/src/sesssionUtils/sessionStorage.ts)
-
 ## Usage: 
 Add it to your project:
 
@@ -43,12 +40,14 @@ export default function Home() {
 
 export function Name() {
 
-  /*get ans provider variables: 
+  /* 
+  get ans provider variables: 
   {
     walletConnected, address, 
     ansData, shortenAddress, 
     arconnectConnect, arconnectDisconnect 
-  } */
+  } 
+  */
   const {
     address,
     walletConnected,
