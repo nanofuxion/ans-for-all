@@ -1,5 +1,11 @@
-# ans-for-all
-A drop in module to utilize the ANS(Arweave Name Service) in react apps
+<p align="center">
+  <a href="https://decent.land">
+    <img src="./img/logo25.png" height="124">
+  </a>
+  <h3 align="center"><code>@decentdotland/ans-for-all</code></h3>
+  <p align="center">A drop in module to utilize the ANS (Arweave Name Service) in react apps</p>
+</p>
+
 
 ## Usage: 
 Add it to your project:
@@ -8,7 +14,7 @@ Add it to your project:
 yarn add ans-for-all
 ```
 
-how to use ans-for-all in your React app:
+### How to use ans-for-all in your React app:
 
 ```jsx 
 //App.js | index.js
@@ -167,8 +173,10 @@ export const Default_Badge = () => {
 }
 ```
 
-# Examples
+## Examples
 
 To run the examples, switch to the respective directories. Run `npm install` or `yarn install`, Then run `npm start dev` or `yarn dev`.
 
+## License
+This project is licensed under the [MIT license](./LICENSE)
 
