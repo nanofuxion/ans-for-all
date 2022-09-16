@@ -4,7 +4,7 @@
 		"logout": "Logout",
 		"swal": {
 			"title": "Install ArConnect to continue",
-			"text": "Permablog uses ArConnect to make it easier to authenticate and send transactions for questions and answers",
+			"text": "This Dapp uses ArConnect to make it easier to broadcast Arweave transactions",
 			"footer": "Download ArConnect here"
 		}
 	}
